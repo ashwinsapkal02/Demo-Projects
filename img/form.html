@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form Filling</title>
+</head>
+<body>
+    <div class="main">
+        <h1>
+            <bold>
+                Appilication Form
+            </bold>
+        </h1>
+        <div>
+            <form action="Post">
+                <div id="table_all">
+                    <table>
+                        <tr>
+                            <td>
+                                <label>
+                                    1. Position Code(select one)<span>*</span>:
+                                </label>
+                            </td>
+                            <td>
+                                <table>
+                                    <div>
+                                        <div class="select">
+                                            <select name="pos" class="search_categories">
+                                                <option value="0">Select</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                                <option value="4">Four</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <hr>
+                <table style="width: 100%;">
+                    <tr>
+                        <td>
+                            <table class="borderChange" style="width: 100%;">
+                                <tr style="border-bottom: 40px;">
+                                    <td>
+                                        <label class="text">
+                                            2. Name<span>*</span>:
+                                        </label>
+                                    </td>
+                                    <td style="vertical-align: bottom;">
+                                        <input type="text" name="username" style="width:400px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="text">
+                                            3. Father's Name<span>*</span>:
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="fathername" style="width:400px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="text">
+                                            4. Date of Birth<span>*</span>:
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <input type="date" name="dob" style="width:295px;">
+                                        <label class="text" style="white-space: normal;">
+                                            Age:
+                                        </label class="text">
+                                        <input type="number" name="age" style="width:40px; background-color: lightgray;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="text">
+                                            5. Gender<span>*</span>:
+                                        </label>
+                                    </td>
+                                    <td style="vertical-align: bottom;">
+                                        <div class="search_categories" style="width:400px;">
+                                            <div class="select">
+                                                <select name="pos" style="width:400px;">
+                                                    <option value="m">Male</option>
+                                                    <option value="f">Female</option>
+                                                    <option value="other">Other</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <lable class="text">
+                                            6. Nationality<span>*</span>
+                                        </lable>
+                                    </td>
+                                    <td style="vertical-align: bottom;">
+                                        <input type="text" name="nationality" style="width:400px;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="text">
+                                            7. Marital Status<span>*</span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <div class="search_categories" style="width:400px;">
+                                            <div class="select">
+                                                <select name="statMar" style="width: 400px; vertical-align: bottom;">
+                                                    <option value="0">Select</option>
+                                                    <option value="married">Married</option>
+                                                    <option value="unmarried">UnMarried</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="text">
+                                            8. Whether belongs to (select one)<span>*</span>
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <input type="radio" name="caste" value="sc">SC
+                                        <input type="radio" name="caste" value="st">ST
+                                        <input type="radio" name="caste" value="obc">OBC
+                                        <input type="radio" name="caste" value="pwd">PWD
+                                        <input type="radio" name="caste" value="general">General
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td>
+                            <label class="text">
+                                Upload Your Photo
+                            </label>
+                            <br>
+                            <div><img id="image" style="border: 1px solid black;width: 200px;height: 250px;" /></div>
+                            <input type="file" id="file" onchange="showImag12()">
+                                <script src="js/jquery.js"></script>
+                                <script>
+                                    function showImag12()
+                                    {
+                                        var path=URL.createObjectURL(document.getElementById("file").files[0]);
+                                        $("image").attr("src",path);
+                                    }
+                                </script>
+                        </td>
+                    </tr>
+                </table>
+                <hr>
+                <div style="display:flex; justify-content: space-between;">
+                    <label class="text">
+                        9. Proof of identity<span>*</span>:
+                    </label>
+                    <div class="search_categories" style="display: inline-flex;margin-left: 70px;width: 340px;">
+                        <div class="select">
+                            <select name="identity" style="width:340px;">
+                                <option value="aadhar">Aadhar Number</option>
+                                <option value="pan">Pan Number</option>
+                            </select>
+                        </div>
+                    </div>
+                    <input type="number" name="identityNum" placeholder="Write your Aadhar/Pan number"
+                        style="margin-left: 100px; width: 260px;">
+                </div>
+                <br>
+                <div id="addressField">
+                    <table style="border-spacing:0 15px;width:100%;">
+                        <tr>
+                            <td style="width:10px;">
+                                <label>
+                                    10. Address for Correspondence<span>*</span>:
+                                </label>
+                            </td>
+                            <td>
+                                <textarea name="address" rows="5" cols="28"></textarea>
+                            </td>
+                            <td colspan="1" style="padding-left: 50px;">
+                                <table style="width:100px;">
+                                    <tr>
+                                        Phone Numbers (with std Codes)
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>
+                                                Office:
+                                            </label>
+                                        </td>
+                                        <td style="padding-left: 75px;">
+                                            <label>
+                                                Residence:
+                                            </label>
+                                        </td>
+                                        <td style="padding-left: 75px;">
+                                            <label>
+                                                Mobile<span>*</span>:
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="text" name="office" style="width:70px;">
+                                        </td>
+                                        <td style="padding-left: 75px;">
+                                            <input type="text" name="residence" style="width:70px;">
+                                        </td>
+                                        <td style="padding-left: 75px;">
+                                            <input type="text" name="mobile" style="width:70px;">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>
+                                    Select State<span>*</span>:
+                                </label>
+                                <br>
+                                <div class="search_categories">
+                                    <div class="select">
+                                        <select name="state" style="width:150px;">
+                                            <option value="0"disabled selected hidden>Select State</option>
+                                            <option value="mh">Maharashtra</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="padding-left:70px;">
+                                <label>
+                                    Select City/Town<span>*</span>:
+                                </label>
+                                <br>
+                                <div class="search_categories" style="width: 150px;">
+                                    <div class="select">
+                                        <select name="city">
+                                            <option value="0" disabled selected hidden></option>
+                                            <option value="pune">Pune</option>
+                                            <option value="mumbai">Mumbai</option>
+                                            <option value="aurangabad">Aurangabad</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="padding-left:50px;">
+                                <label>
+                                    Primary Email<span>*</span>:
+                                </label>
+                                <input type="email" name="email" placeholder="Enter mailid" style="width:330px; margin-left:15px; background-color: lightgrey;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <label>
+                                    Pincode:<span>*</span>
+                                </label>
+                                <input type="text" name="pincode" pattern="[0-9]{6}"
+                                    style="margin-left: 50px; width: 275px;">
+                            </td>
+                            <td style="padding-left:50px;">
+                                <label>
+                                    Secondary Email:<span>*</span>
+                                </label>
+                                <input type="email" name="secemail" placeholder="Enter email" style="width:325px; margin-left:15px">
+                            </td>
+                        </tr>
+                    </table>
+                    <hr>
+                    <div>
+                        <table style="border-spacing: 0 15px; width: 100%;">
+                            <tr>
+                                <td class="text">
+                                    11. Are you currently working in C-DAC?
+                                </td>
+                                <td>
+                                    <div class="search_categories" style="width: fit-content;">
+                                        <div class="select">
+                                            <select name="choice">
+                                                <option value="no">No</option>
+                                                <option value="pune">Pune</option>
+                                                <option value="mumbai">Mumbai</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text">
+                                    12. Are you employed in any Govt./Semi-Govt./PSU/Autonomous Bodies?<span>*</span>
+                                </td>
+                                <td class="text">
+                                    <div class="search_categories" style="width: fit-content;">
+                                        <div class="select">
+                                            <select name="govt">
+                                                <option value="governemnt">Government</option>
+                                                <option value="psu">PSU</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="text" style="font-weight: normal;">
+                                    If <strong>"Yes" </strong>the application should be forwarded through proper channel or NOC to be
+                                    produced at the time of Interview.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text">
+                                    13. Have you ever been interviewed for recruitment in any post in 
+                                    C-DAC earlier?<span>*</span>
+                                </td>
+                                <td>
+                                    <div class="search_categories" style="width: fit-content;">
+                                        <div class="select">
+                                            <select name="choice">
+                                                <option value="no">No</option>
+                                                <option value="pune">Pune</option>
+                                                <option value="mumbai">Mumbai</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                        <hr>
+                    </div>
+                    <div id="quals">
+                        <label class="text">
+                            14. Academic & Professional Qualifications (Begin with latest Graduation/ PG/ PG Diploma (if
+                            any)/ PhD)
+                        </label>
+                        <br>
+                        <br>
+                        <table class="qual" style="border-collapse: collapse; width: 100%;">
+                            <thead >
+                                <th scope="col" class="text">
+                                    Qualification<span>*</span>
+                                </th>
+                                <th scope="col" class="text">
+                                    Name of Institute/Board University<span>*</span>
+                                </th>
+                                <th scope="col" class="text">
+                                    Specialization<span>*</span>
+                                </th>
+                                <th scope="col" class="text">
+                                    Year of Passing<span>*</span>
+                                </th>
+                                <th scope="col" class="text">
+                                    % Marks (Aggregate)<span>*</span>
+                                </th>
+                                <th scope="col" class="text">
+                                    Class/Division/Rank/Distinction
+                                </th>
+                                <th>
+                                    <button id="btn-add1" style="white-space:pre-line; background-color: blue; color: white; border: none; border-radius: 4px; padding: 10px; width: 60px;">
+                                    Add Row</button>
+                                </th>
+                            </thead>
+                            <tbody id="tbody">
+                                <tr style="text-align: -webkit-center;">
+                                    <td>
+                                        <div class="search_categories" style="width: 75px;">
+                                            <div class="select">
+                                                <select name="qual" style="width:75px;">
+                                                    <option value="0">Select</option>
+                                                    <option value="btech">B.Tech.</option>
+                                                    <option value="bsc">B.Sc.</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input type="text" name="school">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="branch" style="width: 80px;">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="yop" pattern="[0-9]{4}" style="width: 60px;">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="marks" style="width: 75px;">
+                                    </td>
+                                    <td>
+                                        <input type="text" name="division" style="width: 110px;">
+                                    </td>
+                                    <td>
+                                        <button class="btn_del" onclick="delfirst()" style="white-space: pre-line; background-color: red; color: white; border: none; border-radius: 4px; padding: 10px;
+                                        width: 80px;">Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
